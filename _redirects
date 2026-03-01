@@ -1,0 +1,52 @@
+# ============================================================
+# Netlify Redirects — landscapingraleighnc.com
+# ============================================================
+
+# Force www -> non-www (canonical consolidation)
+# Netlify handles the www/non-www primary domain setting in the
+# dashboard — this file handles edge cases and legacy paths.
+
+# Non-www to www redirect (if www is set as primary in Netlify dashboard)
+# Uncomment whichever direction matches your Netlify primary domain setting:
+
+# Option A: non-www is primary (recommended — shorter URL)
+https://www.landscapingraleighnc.com/* https://landscapingraleighnc.com/:splat 301!
+
+# Trailing slash normalization — remove trailing slashes
+/*/  /:splat  301
+
+# Legacy / common misspellings / direct file hits without .html
+/home                    /                              301
+/index                   /                              301
+/services                /services.html                 301
+/about                   /about.html                    301
+/contact                 /contact.html                  301
+/faq                     /faq.html                      301
+/reviews                 /reviews.html                  301
+/thank-you               /thank-you.html                301
+
+# Service pages (clean URLs)
+/lawn-care               /lawn-care-raleigh-nc.html     301
+/landscape-design        /landscape-design-raleigh-nc.html 301
+/sod-installation        /sod-installation-raleigh-nc.html 301
+/hardscaping             /hardscaping-raleigh-nc.html   301
+/patio-installation      /patio-installation-raleigh-nc.html 301
+/tree-trimming           /tree-trimming-raleigh-nc.html 301
+/mulch-installation      /mulch-installation-raleigh-nc.html 301
+/drainage                /drainage-raleigh-nc.html      301
+/irrigation              /irrigation-raleigh-nc.html    301
+/commercial              /commercial-landscaping-raleigh-nc.html 301
+
+# City pages (clean URLs)
+/cary                    /cary-nc-landscaping.html      301
+/apex                    /apex-nc-landscaping.html      301
+/durham                  /durham-nc-landscaping.html    301
+/garner                  /garner-nc-landscaping.html    301
+/knightdale              /knightdale-nc-landscaping.html 301
+/morrisville             /morrisville-nc-landscaping.html 301
+/wake-forest             /wake-forest-nc-landscaping.html 301
+/holly-springs           /holly-springs-nc-landscaping.html 301
+/fuquay-varina           /fuquay-varina-nc-landscaping.html 301
+
+# 404 fallback
+/*  /index.html  404
